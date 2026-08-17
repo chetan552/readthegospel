@@ -1,6 +1,6 @@
 # Read The Gospel
 
-A quiet place to read the true gospel of Jesus Christ — a Next.js 15 site hosting the
+A place to read the true gospel of Jesus Christ — a Next.js 15 site hosting the
 four-step gospel path by Zac Poonen, indexes of the 72 Basic Christian Teachings and the
 70 Through the Bible expositions (audio on cfcindia.com), and an about page.
 

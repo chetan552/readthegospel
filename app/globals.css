@@ -220,10 +220,19 @@ textarea {
   border-radius: 10px;
 }
 
-/* The logo's lettering is dark, so give it a light ground in dark mode. */
-[data-theme="dark"] .logo-img {
-  background: var(--paper);
-  border: 1px solid var(--line);
+/* Two logo variants — only the one matching the theme is shown.
+   The light variant's lettering is dark; the dark variant is recolored
+   (light lettering, sage leaves) to sit on the dark background. */
+.logo-img-dark {
+  display: none;
+}
+
+[data-theme="dark"] .logo-img-light {
+  display: none;
+}
+
+[data-theme="dark"] .logo-img-dark {
+  display: block;
 }
 
 .footer-logo {

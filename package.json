@@ -2,7 +2,7 @@
   "name": "read-the-gospel",
   "version": "1.0.0",
   "private": true,
-  "description": "Read The Gospel — a quiet place to read the true gospel of Jesus Christ.",
+  "description": "Read The Gospel — a place to read the true gospel of Jesus Christ.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

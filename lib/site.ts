@@ -5,7 +5,7 @@ export const site = {
     "She will give birth to a Son, and you are to give Him the name Jesus, because He will save His people from their sins.",
   citation: "The Gospel of Matthew 1:21",
   description:
-    "A quiet place to read the true gospel of Jesus Christ — repentance, the cross, the resurrection, and a life no longer lived for ourselves.",
+    "A place to read the true gospel of Jesus Christ — repentance, the cross, the resurrection, and a life no longer lived for ourselves.",
   seoDescription:
     "The true gospel of Jesus Christ: salvation, repentance, the cross, and the resurrection. Read how to be saved and how to spot false gospels and counterfeit revival.",
 };

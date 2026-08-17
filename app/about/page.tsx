@@ -16,7 +16,7 @@ export default function Page() {
     <>
       <PageHeader
         kicker="About"
-        title="A quiet place to read the true gospel"
+        title="A place to read the true gospel"
         lede={site.description}
       />
 
@@ -30,7 +30,7 @@ export default function Page() {
             people convinced they are saved when they are not.
           </p>
           <p>
-            This site gathers the true gospel in one quiet place: four articles that lay
+            This site gathers the true gospel in one place: four articles that lay
             the foundation, then two series of teachings for those who want to go on —
             first the basics of the Christian life, and then the distinctive message of
             every book of the Bible.

@@ -1,19 +1,14 @@
 import Link from "next/link";
 import { readingPath } from "@/lib/articles";
 import { site } from "@/lib/site";
+import { Logo } from "./Logo";
 
 export function Footer() {
   return (
     <footer className="site-footer">
       <div className="wrap footer-grid">
         <div>
-          <img
-            className="logo-img footer-logo"
-            src="/readthegospel-logo.gif"
-            alt={site.name}
-            width={138}
-            height={46}
-          />
+          <Logo className="footer-logo" />
           <p>
             {site.tagline} <em>{site.citation}</em>
           </p>

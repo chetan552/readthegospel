@@ -3,7 +3,8 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { nav, site } from "@/lib/site";
+import { nav } from "@/lib/site";
+import { Logo } from "./Logo";
 import { ThemeToggle } from "./ThemeToggle";
 
 export function Header() {
@@ -26,13 +27,7 @@ export function Header() {
     <header className={`site-header${scrolled ? " is-scrolled" : ""}`}>
       <div className="header-inner">
         <Link href="/" className="wordmark">
-          <img
-            className="logo-img"
-            src="/readthegospel-logo.gif"
-            alt={site.name}
-            width={138}
-            height={46}
-          />
+          <Logo />
         </Link>
         <nav className="nav" aria-label="Primary">
           {nav.map((item) => {
