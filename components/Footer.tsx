@@ -50,7 +50,7 @@ export function Footer() {
       </div>
       <div className="wrap copyright">
         Teachings by Zac Poonen, shared so that people may read the true gospel of Jesus
-        Christ. Hosted independently of WordPress.
+        Christ.
       </div>
     </footer>
   );

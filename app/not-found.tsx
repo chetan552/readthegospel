@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Button } from "@/components/ui/Button";
 
 export default function NotFound() {
   return (
@@ -10,12 +10,12 @@ export default function NotFound() {
         But the gospel does — and it is right here.
       </p>
       <div className="hero-actions">
-        <Link className="btn btn-primary" href="/">
+        <Button href="/" variant="primary">
           Return home
-        </Link>
-        <Link className="btn btn-ghost" href="/the-true-gospel-and-the-false">
+        </Button>
+        <Button href="/the-true-gospel-and-the-false" variant="ghost">
           Read the gospel
-        </Link>
+        </Button>
       </div>
     </section>
   );

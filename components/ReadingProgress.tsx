@@ -23,5 +23,15 @@ export function ReadingProgress() {
     };
   }, []);
 
-  return <div className="progress" style={{ width: `${width}%` }} />;
+  return (
+    <div
+      className="progress"
+      role="progressbar"
+      aria-label="Reading progress"
+      aria-valuemin={0}
+      aria-valuemax={100}
+      aria-valuenow={Math.round(width)}
+      style={{ width: `${width}%` }}
+    />
+  );
 }

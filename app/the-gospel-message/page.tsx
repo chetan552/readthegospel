@@ -109,7 +109,7 @@ export default function Page() {
       </p>
 
       <h2>A prayer you can pray</h2>
-      <blockquote>
+      <blockquote className="prompt-panel">
         Lord Jesus, I believe that You are the Son of God. I confess that I am a sinner. I
         turn from my sins and I ask You to forgive me, for Your sake. Come into my life
         now, blot out the record of my past, and make me a child of God.

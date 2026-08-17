@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { readingPath } from "@/lib/articles";
+import { PageHeader } from "@/components/ui/PageHeader";
 
 export const metadata: Metadata = {
   title: "Teachings",
@@ -11,15 +12,11 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
-      <section className="page-intro narrow">
-        <p className="kicker">Teachings</p>
-        <h1>A path from the gospel to the whole Bible</h1>
-        <p>
-          Everything on this site is arranged as a path: first the gospel itself, then the
-          foundations of the Christian life, then the distinctive message of every book of
-          Scripture.
-        </p>
-      </section>
+      <PageHeader
+        kicker="Teachings"
+        title="A path from the gospel to the whole Bible"
+        lede="Everything on this site is arranged as a path: first the gospel itself, then the foundations of the Christian life, then the distinctive message of every book of Scripture."
+      />
 
       <section className="section">
         <div className="wrap">

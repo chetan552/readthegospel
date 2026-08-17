@@ -55,7 +55,8 @@ export function Header() {
             className="menu-btn"
             type="button"
             aria-expanded={open}
-            aria-label="Open menu"
+            aria-controls="mobile-nav"
+            aria-label={open ? "Close menu" : "Open menu"}
             onClick={() => setOpen((value) => !value)}
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -69,13 +70,16 @@ export function Header() {
         </div>
       </div>
       {open ? (
-        <nav className="mobile-nav" aria-label="Mobile">
+        <nav className="mobile-nav" id="mobile-nav" aria-label="Mobile">
           {nav.map((item) => {
             const external = item.href.startsWith("http");
             return (
               <Link
                 key={item.href}
                 href={item.href}
+                aria-current={
+                  !external && pathname === item.href ? "page" : undefined
+                }
                 {...(external ? { target: "_blank", rel: "noreferrer" } : {})}
               >
                 {item.label}

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { newTestament, oldTestament } from "@/lib/teachings";
+import { PageHeader } from "@/components/ui/PageHeader";
 
 export const metadata: Metadata = {
   title: "Through the Bible",
@@ -10,14 +11,11 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
-      <section className="page-intro narrow">
-        <p className="kicker">Step 06 — The whole book</p>
-        <h1>Through the Bible</h1>
-        <p>
-          70 one-hour expositions that bring out the distinctive message of each book of
-          the Bible, by Zac Poonen. To listen to a message, click on the Bible book.
-        </p>
-      </section>
+      <PageHeader
+        kicker="Step 06 — The whole book"
+        title="Through the Bible"
+        lede="70 one-hour expositions that bring out the distinctive message of each book of the Bible, by Zac Poonen. To listen to a message, click on the Bible book."
+      />
 
       <section className="section">
         <div className="wrap split">

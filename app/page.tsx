@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { readingPath } from "@/lib/articles";
 import { site } from "@/lib/site";
+import { Button } from "@/components/ui/Button";
 
 export default function HomePage() {
   return (
@@ -8,15 +9,15 @@ export default function HomePage() {
       <section className="hero">
         <p className="kicker">{site.name}</p>
         <h1 className="verse">{site.tagline}</h1>
-        <div className="ornament">†</div>
+        <div className="ornament">~</div>
         <p className="cite">{site.citation}</p>
         <div className="hero-actions">
-          <Link className="btn btn-primary" href="/the-true-gospel-and-the-false">
+          <Button href="/the-true-gospel-and-the-false" variant="primary">
             Begin reading
-          </Link>
-          <Link className="btn btn-ghost" href="/the-gospel-message">
+          </Button>
+          <Button href="/the-gospel-message" variant="ghost">
             What must I do to be saved?
-          </Link>
+          </Button>
         </div>
       </section>
 
@@ -57,10 +58,7 @@ export default function HomePage() {
             <div>
               <p className="kicker">A path through the gospel</p>
               <h2>Read these four pages, in order.</h2>
-              <p>
-                The original site gathered these teachings so a person could hear the whole
-                gospel — not a slogan, not a feeling, and not a promise of an easy life.
-              </p>
+          
             </div>
           </div>
           <div className="path-grid">

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { author, site } from "@/lib/site";
+import { PageHeader } from "@/components/ui/PageHeader";
 
 export const metadata: Metadata = {
   title: "About",
@@ -10,11 +11,11 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
-      <section className="page-intro narrow">
-        <p className="kicker">About</p>
-        <h1>A quiet place to read the true gospel</h1>
-        <p>{site.description}</p>
-      </section>
+      <PageHeader
+        kicker="About"
+        title="A quiet place to read the true gospel"
+        lede={site.description}
+      />
 
       <section className="section">
         <div className="narrow panel essay">

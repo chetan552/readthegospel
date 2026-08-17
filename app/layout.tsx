@@ -1,18 +1,17 @@
 import type { Metadata } from "next";
-import { Fraunces, Outfit, Source_Serif_4 } from "next/font/google";
+import { EB_Garamond, Lora, Outfit } from "next/font/google";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { ThemeScript } from "@/components/ThemeScript";
 import { site } from "@/lib/site";
 import "./globals.css";
 
-const display = Fraunces({
+const display = EB_Garamond({
   subsets: ["latin"],
   variable: "--font-display",
-  axes: ["SOFT", "WONK", "opsz"],
 });
 
-const serif = Source_Serif_4({
+const serif = Lora({
   subsets: ["latin"],
   variable: "--font-serif",
 });

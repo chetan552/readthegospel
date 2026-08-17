@@ -1,8 +1,10 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
-import type { Article } from "@/lib/articles";
+import { readingPath, type Article } from "@/lib/articles";
 import { author } from "@/lib/site";
 import { ReadingProgress } from "./ReadingProgress";
+import { BottomActionBar } from "./ui/BottomActionBar";
+import { Button } from "./ui/Button";
 
 export function ArticleLayout({
   article,
@@ -11,11 +13,30 @@ export function ArticleLayout({
   article: Article;
   children: ReactNode;
 }) {
+  const stepIndex = readingPath.findIndex((item) => item.slug === article.slug);
+
   return (
     <>
       <ReadingProgress />
       <article data-article>
         <header className="article-hero narrow">
+          {stepIndex >= 0 ? (
+            <nav className="breadcrumb" aria-label="Breadcrumb">
+              <ol>
+                <li>
+                  <Link href="/">Home</Link>
+                </li>
+                <li aria-hidden="true">›</li>
+                <li>
+                  <Link href="/teachings">The gospel path</Link>
+                </li>
+                <li aria-hidden="true">›</li>
+                <li aria-current="page">
+                  Step {stepIndex + 1} of {readingPath.length}
+                </li>
+              </ol>
+            </nav>
+          ) : null}
           <p className="kicker">{article.kicker}</p>
           <h1>{article.title}</h1>
           <div className="article-meta">
@@ -25,14 +46,14 @@ export function ArticleLayout({
           {article.video || article.audio ? (
             <div className="media-row">
               {article.video ? (
-                <a className="btn btn-primary" href={article.video.href} target="_blank" rel="noreferrer">
+                <Button href={article.video.href} variant="primary">
                   {article.video.label}
-                </a>
+                </Button>
               ) : null}
               {article.audio ? (
-                <a className="btn btn-ghost" href={article.audio.href} target="_blank" rel="noreferrer">
+                <Button href={article.audio.href} variant="ghost">
                   {article.audio.label}
-                </a>
+                </Button>
               ) : null}
             </div>
           ) : null}
@@ -82,6 +103,12 @@ export function ArticleLayout({
           ) : null}
         </div>
       </article>
+      {article.next ? (
+        <>
+          <div className="bar-spacer" aria-hidden="true" />
+          <BottomActionBar next={article.next} />
+        </>
+      ) : null}
     </>
   );
 }
