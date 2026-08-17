@@ -6,7 +6,9 @@ const article = getArticle("the-gospel-message")!;
 
 export const metadata: Metadata = {
   title: article.title,
-  description: article.summary,
+  description:
+    "What must I do to be saved? The gospel message: repentance toward God, faith in the Lord Jesus Christ, the new birth, and assurance of salvation.",
+  alternates: { canonical: `/${article.slug}` },
 };
 
 export default function Page() {

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { readingPath, type Article } from "@/lib/articles";
-import { author } from "@/lib/site";
+import { author, site } from "@/lib/site";
 import { ReadingProgress } from "./ReadingProgress";
 import { BottomActionBar } from "./ui/BottomActionBar";
 import { Button } from "./ui/Button";
@@ -15,8 +15,47 @@ export function ArticleLayout({
 }) {
   const stepIndex = readingPath.findIndex((item) => item.slug === article.slug);
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: `${site.url}/` },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "The gospel path",
+        item: `${site.url}/teachings`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: article.title,
+        item: `${site.url}/${article.slug}`,
+      },
+    ],
+  };
+
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: article.title,
+    description: article.summary,
+    author: { "@type": "Person", name: author.name },
+    inLanguage: "en",
+    url: `${site.url}/${article.slug}`,
+    mainEntityOfPage: `${site.url}/${article.slug}`,
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <ReadingProgress />
       <article data-article>
         <header className="article-hero narrow">

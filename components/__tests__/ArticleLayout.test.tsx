@@ -48,6 +48,29 @@ describe("ArticleLayout", () => {
     expect(screen.getByText("Step 4 of 4")).toBeInTheDocument();
   });
 
+  it("emits Article and BreadcrumbList structured data for SEO", () => {
+    const article = getArticle("counterfeit-revival")!;
+    const { container } = render(
+      <ArticleLayout article={article}>
+        <p>Body.</p>
+      </ArticleLayout>
+    );
+
+    const scripts = [...container.querySelectorAll('script[type="application/ld+json"]')].map(
+      (script) => JSON.parse(script.textContent ?? "{}")
+    );
+    const types = scripts.map((schema) => schema["@type"]).sort();
+    expect(types).toEqual(["Article", "BreadcrumbList"]);
+
+    const articleSchema = scripts.find((schema) => schema["@type"] === "Article");
+    expect(articleSchema.headline).toBe("Counterfeit Revival");
+    expect(articleSchema.author.name).toBe("Zac Poonen");
+
+    const breadcrumb = scripts.find((schema) => schema["@type"] === "BreadcrumbList");
+    expect(breadcrumb.itemListElement).toHaveLength(3);
+    expect(breadcrumb.itemListElement[2].name).toBe("Counterfeit Revival");
+  });
+
   it("renders no next step or bottom bar when the article has none", () => {
     const article = { ...getArticle("the-true-gospel-and-the-false")!, next: undefined };
     render(

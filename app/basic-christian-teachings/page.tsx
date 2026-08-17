@@ -5,7 +5,8 @@ import { PageHeader } from "@/components/ui/PageHeader";
 export const metadata: Metadata = {
   title: "Basic Christian Teachings",
   description:
-    "72 short audio messages by Zac Poonen on foundational Christian truths — repentance, faith, the Word, the Holy Spirit, and a holy life.",
+    "72 short audio messages by Zac Poonen on the foundations of the Christian life: repentance, faith, God’s Word, the Holy Spirit, and a holy life.",
+  alternates: { canonical: "/basic-christian-teachings" },
 };
 
 export default function Page() {

@@ -1,11 +1,31 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { readingPath } from "@/lib/articles";
 import { site } from "@/lib/site";
 import { Button } from "@/components/ui/Button";
 
+export const metadata: Metadata = {
+  title: { absolute: `${site.name} — The True Gospel of Jesus Christ` },
+  description: site.seoDescription,
+  alternates: { canonical: "/" },
+};
+
+const webSiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: site.name,
+  url: site.url,
+  description: site.seoDescription,
+  inLanguage: "en",
+};
+
 export default function HomePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteSchema) }}
+      />
       <section className="hero">
         <p className="kicker">{site.name}</p>
         <h1 className="verse">{site.tagline}</h1>

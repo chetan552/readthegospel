@@ -5,7 +5,8 @@ import { PageHeader } from "@/components/ui/PageHeader";
 export const metadata: Metadata = {
   title: "Through the Bible",
   description:
-    "70 one-hour audio expositions by Zac Poonen that bring out the distinctive message of each book of Scripture, from Genesis to Revelation.",
+    "70 one-hour audio expositions by Zac Poonen on the distinctive message of each book of the Bible, from Genesis to Revelation.",
+  alternates: { canonical: "/through-the-bible" },
 };
 
 export default function Page() {

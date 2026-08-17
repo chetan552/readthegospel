@@ -83,6 +83,13 @@ pill background in dark mode.
 - Skip link, semantic landmarks, `aria-current` on active nav, `aria-expanded`/`aria-controls` on the menu
 - All type is rem-based; content has no fixed widths (zoom-safe)
 
+### SEO
+
+- Keyword-focused, honest meta titles and descriptions on every page (never fabricated dates or hidden text)
+- `app/sitemap.ts` and `app/robots.ts` (generated at build; `/contact` and 404 excluded)
+- JSON-LD structured data: `WebSite` on the home page, `Article` + `BreadcrumbList` on article pages
+- Canonical URLs via `alternates.canonical` on every page; OpenGraph + Twitter cards with a generated 1200×630 image (`app/opengraph-image.tsx`)
+
 ### Content provenance
 
 All articles and teaching titles are by Zac Poonen, shared to make the true

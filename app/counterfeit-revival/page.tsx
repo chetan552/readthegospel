@@ -6,7 +6,9 @@ const article = getArticle("counterfeit-revival")!;
 
 export const metadata: Metadata = {
   title: article.title,
-  description: article.summary,
+  description:
+    "Why are so many Christians deceived by false prophets and counterfeit revival? True revival versus deception, and how to build an unshakeable church.",
+  alternates: { canonical: `/${article.slug}` },
 };
 
 export default function Page() {

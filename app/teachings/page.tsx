@@ -6,7 +6,8 @@ import { PageHeader } from "@/components/ui/PageHeader";
 export const metadata: Metadata = {
   title: "Teachings",
   description:
-    "The gospel in four steps, 72 basic Christian teachings, and 70 expositions through the whole Bible — all by Zac Poonen.",
+    "The gospel in four steps, 72 basic Christian teachings, and 70 expositions through the whole Bible — a complete path by Zac Poonen.",
+  alternates: { canonical: "/teachings" },
 };
 
 export default function Page() {

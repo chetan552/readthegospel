@@ -6,7 +6,9 @@ const article = getArticle("the-true-gospel-and-the-false")!;
 
 export const metadata: Metadata = {
   title: article.title,
-  description: article.summary,
+  description:
+    "Two gospels are preached today: one man-centered, one God-centered. Read the difference — repentance, the cross, and salvation from sin.",
+  alternates: { canonical: `/${article.slug}` },
 };
 
 export default function Page() {

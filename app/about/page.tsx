@@ -5,7 +5,9 @@ import { PageHeader } from "@/components/ui/PageHeader";
 
 export const metadata: Metadata = {
   title: "About",
-  description: site.description,
+  description:
+    "Why this site exists: to make the true gospel of Jesus Christ freely readable — the gospel path, basic Christian teachings, and the whole Bible.",
+  alternates: { canonical: "/about" },
 };
 
 export default function Page() {

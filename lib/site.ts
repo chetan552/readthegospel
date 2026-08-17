@@ -6,6 +6,8 @@ export const site = {
   citation: "The Gospel of Matthew 1:21",
   description:
     "A quiet place to read the true gospel of Jesus Christ — repentance, the cross, the resurrection, and a life no longer lived for ourselves.",
+  seoDescription:
+    "The true gospel of Jesus Christ: salvation, repentance, the cross, and the resurrection. Read how to be saved and how to spot false gospels and counterfeit revival.",
 };
 
 export const nav = [

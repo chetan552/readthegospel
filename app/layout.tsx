@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { EB_Garamond, Lora, Outfit } from "next/font/google";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
@@ -24,18 +24,33 @@ const sans = Outfit({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} — ${site.citation}`,
+    default: `${site.name} — The True Gospel of Jesus Christ`,
     template: `%s — ${site.name}`,
   },
-  description: site.description,
+  description: site.seoDescription,
   openGraph: {
-    title: site.name,
-    description: site.description,
+    title: `${site.name} — The True Gospel of Jesus Christ`,
+    description: site.seoDescription,
     url: site.url,
     siteName: site.name,
     type: "website",
+    locale: "en_US",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: site.name }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${site.name} — The True Gospel of Jesus Christ`,
+    description: site.seoDescription,
+    images: ["/opengraph-image"],
   },
   icons: { icon: "/favicon.svg" },
+};
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#f5efe3" },
+    { media: "(prefers-color-scheme: dark)", color: "#161310" },
+  ],
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

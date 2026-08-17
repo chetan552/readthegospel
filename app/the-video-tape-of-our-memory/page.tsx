@@ -6,7 +6,9 @@ const article = getArticle("the-video-tape-of-our-memory")!;
 
 export const metadata: Metadata = {
   title: article.title,
-  description: article.summary,
+  description:
+    "A coming day of judgment when every life is replayed. What the Bible says about judgment day and the one way your sins can be erased and forgiven.",
+  alternates: { canonical: `/${article.slug}` },
 };
 
 export default function Page() {
