@@ -13,7 +13,7 @@ export const nav = [
   { href: "/the-gospel-message", label: "The Gospel" },
   { href: "/teachings", label: "Teachings" },
   { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
+  { href: "https://cfcindia.com/locate-us", label: "Contact" },
 ];
 
 export const author = {

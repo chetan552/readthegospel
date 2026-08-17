@@ -35,15 +35,19 @@ export function Header() {
           />
         </Link>
         <nav className="nav" aria-label="Primary">
-          {nav.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              aria-current={pathname === item.href ? "page" : undefined}
-            >
-              {item.label}
-            </Link>
-          ))}
+          {nav.map((item) => {
+            const external = item.href.startsWith("http");
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                aria-current={pathname === item.href ? "page" : undefined}
+                {...(external ? { target: "_blank", rel: "noreferrer" } : {})}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
         </nav>
         <div className="header-actions">
           <ThemeToggle />
@@ -66,11 +70,18 @@ export function Header() {
       </div>
       {open ? (
         <nav className="mobile-nav" aria-label="Mobile">
-          {nav.map((item) => (
-            <Link key={item.href} href={item.href}>
-              {item.label}
-            </Link>
-          ))}
+          {nav.map((item) => {
+            const external = item.href.startsWith("http");
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                {...(external ? { target: "_blank", rel: "noreferrer" } : {})}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
         </nav>
       ) : null}
     </header>

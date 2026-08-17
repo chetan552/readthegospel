@@ -41,7 +41,9 @@ export function Footer() {
               <Link href="/about">About</Link>
             </li>
             <li>
-              <Link href="/contact">Contact</Link>
+              <a href="https://cfcindia.com/locate-us" target="_blank" rel="noreferrer">
+                Contact
+              </a>
             </li>
           </ul>
         </div>

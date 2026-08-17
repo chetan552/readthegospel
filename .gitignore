@@ -11,9 +11,6 @@ coverage
 out
 build
 
-# local data (contact form messages)
-data/messages.json
-
 # local env files
 .env
 .env*.local
