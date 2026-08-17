@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { author, site } from "@/lib/site";
 import { PageHeader } from "@/components/ui/PageHeader";
@@ -41,6 +42,15 @@ export default function Page() {
           </p>
 
           <h2>The author</h2>
+          <figure className="author-photo">
+            <Image
+              src="/zac-poonen-profile.jpg"
+              alt={`Portrait of ${author.name}`}
+              width={250}
+              height={296}
+              sizes="(max-width: 640px) 132px, 176px"
+            />
+          </figure>
           <p>{author.blurb}</p>
           <p>
             All articles and teachings on this site are by Zac Poonen and are shared so

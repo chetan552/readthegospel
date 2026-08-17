@@ -441,6 +441,25 @@ textarea {
   color: var(--ink-soft);
 }
 
+/* Author portrait — framed like the panels, floated beside the text */
+.author-photo {
+  float: left;
+  width: clamp(132px, 38vw, 176px);
+  margin: 0.35rem 1.6rem 1.1rem 0;
+  padding: 0.45rem;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-soft);
+}
+
+.author-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: calc(var(--radius-sm) - 4px);
+}
+
 /* ------------------------------------------------------------------ */
 /*  Breadcrumb (article pages only)                                    */
 /* ------------------------------------------------------------------ */
