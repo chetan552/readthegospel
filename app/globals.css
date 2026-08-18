@@ -418,6 +418,186 @@ textarea {
 }
 
 /* ------------------------------------------------------------------ */
+/*  Homepage landscape (logo motif: sun, hills, path)                  */
+/* ------------------------------------------------------------------ */
+
+.hero.hero-home {
+  --art-sky-top: #f7f1e4;
+  --art-sky-mid: #f0e2c4;
+  --art-sky-horizon: #e4c98a;
+  --art-sky-ground: #d7c7a0;
+  --art-sun: #f0c14b;
+  --art-sun-core: #fff6d4;
+  --art-cloud: rgba(255, 249, 236, 0.28);
+  --art-hill-1: #c5c4a6;
+  --art-hill-2: #9aaa84;
+  --art-hill-3: #6f8a68;
+  --art-hill-3-shade: #3d5745;
+  --art-hill-4: #4c6a54;
+  --art-path: #e8d9b4;
+  --art-path-edge: #c4ae7e;
+  --art-path-light: #f7f0dc;
+  --art-tree: #3d5745;
+  --art-tree-lit: #8fb599;
+  --art-trunk: #3a3224;
+  --art-haze: #f5efe3;
+  --art-bird: rgba(61, 87, 69, 0.45);
+  --art-star: #f3eadc;
+
+  min-height: 100svh;
+  margin-top: calc(var(--header) * -1);
+  padding: calc(var(--header) + 3.2rem) 1.2rem 6.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+[data-theme="dark"] .hero.hero-home {
+  --art-sky-top: #12100e;
+  --art-sky-mid: #1b1712;
+  --art-sky-horizon: #2c2418;
+  --art-sky-ground: #1a1812;
+  --art-sun: #cfa95e;
+  --art-sun-core: #f3eadc;
+  --art-cloud: rgba(243, 234, 220, 0.06);
+  --art-hill-1: #2a2822;
+  --art-hill-2: #2e352c;
+  --art-hill-3: #3a4a3e;
+  --art-hill-3-shade: #10140f;
+  --art-hill-4: #243328;
+  --art-path: #5a4e38;
+  --art-path-edge: #3a3428;
+  --art-path-light: #cfa95e;
+  --art-tree: #1a241c;
+  --art-tree-lit: #8fb599;
+  --art-trunk: #161310;
+  --art-haze: #161310;
+  --art-bird: rgba(243, 234, 220, 0.35);
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 1;
+  width: min(1120px, 100%);
+}
+
+.hero-copy::before {
+  content: "";
+  position: absolute;
+  inset: -12% -18%;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse 72% 64% at 50% 42%,
+    color-mix(in srgb, var(--bg) 80%, transparent),
+    transparent 80%
+  );
+}
+
+.hero.hero-home .verse {
+  text-shadow: 0 1px 18px color-mix(in srgb, var(--bg) 55%, transparent);
+}
+
+.hero.hero-home .btn-ghost {
+  background: color-mix(in srgb, var(--paper) 78%, transparent);
+  backdrop-filter: blur(8px);
+}
+
+.hero-art {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.hero-art-img {
+  object-fit: cover;
+  object-position: center 40%;
+  filter: saturate(1.04) contrast(1.02);
+}
+
+[data-theme="dark"] .hero-art-img {
+  filter: brightness(0.55) saturate(0.9) contrast(1.04);
+}
+
+/* Melts the image into the header at the top and the paper at the bottom. */
+.hero-art-fade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+      to bottom,
+      color-mix(in srgb, var(--bg) 34%, transparent),
+      transparent 14%
+    ),
+    linear-gradient(to bottom, transparent 62%, var(--bg) 99%);
+}
+
+.art-stars {
+  opacity: 0;
+}
+
+[data-theme="dark"] .art-stars {
+  opacity: 1;
+}
+
+.art-rays {
+  opacity: 0.11;
+  mix-blend-mode: soft-light;
+  transform-origin: 50% 0%;
+  animation: ray-drift 64s linear infinite;
+}
+
+[data-theme="dark"] .art-rays {
+  opacity: 0.2;
+  mix-blend-mode: screen;
+}
+
+.art-glow {
+  animation: sun-breathe 11s ease-in-out infinite alternate;
+}
+
+.art-cloud {
+  animation: cloud-drift 48s ease-in-out infinite alternate;
+}
+
+@keyframes sun-breathe {
+  from {
+    opacity: 0.86;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes ray-drift {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(10deg);
+  }
+}
+
+@keyframes cloud-drift {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(18px);
+  }
+}
+
+/* Let the landscape show through the header until the page is scrolled. */
+body:has(.hero-home) .site-header:not(.is-scrolled) {
+  background: color-mix(in srgb, var(--bg) 22%, transparent);
+  border-bottom-color: transparent;
+}
+
+/* ------------------------------------------------------------------ */
 /*  Editorial layout                                                   */
 /* ------------------------------------------------------------------ */
 
@@ -1131,6 +1311,10 @@ textarea {
     padding-top: 3rem;
   }
 
+  .hero.hero-home {
+    padding: calc(var(--header) + 2.2rem) 1.1rem 5rem;
+  }
+
   .teaching {
     grid-template-columns: 2.2rem 1fr;
   }
@@ -1171,8 +1355,15 @@ textarea {
   .bottom-bar,
   .bar-spacer,
   .menu-btn,
-  .icon-btn {
+  .icon-btn,
+  .hero-art {
     display: none !important;
+  }
+
+  .hero.hero-home {
+    min-height: 0;
+    margin-top: 0;
+    padding: 2rem 0;
   }
 
   body {

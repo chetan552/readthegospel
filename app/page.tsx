@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { HomeArtwork } from "@/components/HomeArtwork";
 import { readingPath } from "@/lib/articles";
 import { site } from "@/lib/site";
 import { Button } from "@/components/ui/Button";
@@ -26,18 +27,21 @@ export default function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteSchema) }}
       />
-      <section className="hero">
-        <p className="kicker">{site.name}</p>
-        <h1 className="verse">{site.tagline}</h1>
-        <div className="ornament">~</div>
-        <p className="cite">{site.citation}</p>
-        <div className="hero-actions">
-          <Button href="/the-true-gospel-and-the-false" variant="primary">
-            Begin reading
-          </Button>
-          <Button href="/the-gospel-message" variant="ghost">
-            What must I do to be saved?
-          </Button>
+      <section className="hero hero-home">
+        <HomeArtwork />
+        <div className="hero-copy">
+          <p className="kicker">{site.name}</p>
+          <h1 className="verse">{site.tagline}</h1>
+          <div className="ornament">~</div>
+          <p className="cite">{site.citation}</p>
+          <div className="hero-actions">
+            <Button href="/the-true-gospel-and-the-false" variant="primary">
+              Begin reading
+            </Button>
+            <Button href="/the-gospel-message" variant="ghost">
+              What must I do to be saved?
+            </Button>
+          </div>
         </div>
       </section>
 

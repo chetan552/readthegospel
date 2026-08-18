@@ -9,14 +9,14 @@ export function Logo({ className }: { className?: string }) {
     <>
       <img
         className={`${base} logo-img-light`}
-        src="/readthegospel-logo.gif"
+        src="/readthegospel-logo.png"
         alt={site.name}
         width={138}
         height={46}
       />
       <img
         className={`${base} logo-img-dark`}
-        src="/readthegospel-logo-dark.png"
+        src="/readthegospel-logo.png"
         alt={site.name}
         width={138}
         height={46}
