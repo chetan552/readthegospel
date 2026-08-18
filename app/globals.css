@@ -487,18 +487,24 @@ textarea {
 .hero-copy::before {
   content: "";
   position: absolute;
-  inset: -12% -18%;
+  inset: -14% -22%;
   z-index: -1;
   pointer-events: none;
   background: radial-gradient(
-    ellipse 72% 64% at 50% 42%,
-    color-mix(in srgb, var(--bg) 80%, transparent),
-    transparent 80%
+    ellipse 88% 78% at 50% 46%,
+    color-mix(in srgb, var(--bg) 86%, transparent),
+    transparent 84%
   );
 }
 
 .hero.hero-home .verse {
   text-shadow: 0 1px 18px color-mix(in srgb, var(--bg) 55%, transparent);
+}
+
+.hero.hero-home .kicker,
+.hero.hero-home .cite,
+.hero.hero-home .ornament {
+  text-shadow: 0 1px 14px color-mix(in srgb, var(--bg) 78%, transparent);
 }
 
 .hero.hero-home .btn-ghost {
